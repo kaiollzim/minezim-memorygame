@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minezim - MemoryGame</title>
+
+    <!-- FAVICON LINK -->
+    <link rel="shortcut icon" href="./images/brain.png" type="image/x-icon">
+
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/login.css">
+
+    <!-- JS LINK -->
+    <!-- Utilizamos a tag 'defer' para adiar a leitura do script (Evitando erros de leitura de componentes)-->
+    <script defer src="./js/login.js"></script>
+
+    <title>Minezim | Login</title>
 </head>
 <body>
     
+    <form class="login-form">
+
+        <div class="login__header">
+            <img src="./images/brain.png" alt="brain icon">
+            <h1>Minezim - Memory Game</h1>
+
+            <input type="text" placeholder="Nick" class="login__input">
+            <button type="submit" class="login__button" disabled>Play</button>
+        </div>
+
+    </form>
+
 </body>
 </html>
