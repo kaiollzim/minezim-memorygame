@@ -17,6 +17,7 @@ const chars = [
 ];
 
 const createElement = (tag, className) => {
+
     const element = document.createElement(tag);
     element.className = className;
     return element;
@@ -26,6 +27,7 @@ let firstCard = '';
 let secondCard = '';
 
 const checkEndGame = () => {
+
     const disabledCards = document.querySelectorAll('.disabled-card')
 
     if (disabledCards.length === 22) {
@@ -37,6 +39,7 @@ const checkEndGame = () => {
 }
 
 const checkCards = () => {
+
     const firstChar = firstCard.getAttribute('data-char')
     const secondChar = secondCard.getAttribute('data-char')
 
@@ -81,8 +84,6 @@ const revealCard = ({ target }) => {
     } else {
         return;
     }
-    
-
 }
 
 const createCard = (char) => {
@@ -107,13 +108,10 @@ const loadGame = () => {
     const duplicateChar = [ ...chars, ...chars ];
     const shuffedArray = duplicateChar.sort( () => Math.random() - 0.5 );
 
-    
-
     duplicateChar.forEach((char) => {
 
         const card = createCard(char);
         grid.appendChild(card);
-
     })
 
 }
@@ -125,13 +123,32 @@ const startTimer = () => {
         const currentTime = +timer.innerHTML;
         timer.innerHTML = currentTime + 1;
     }, 1000)
+}
+
+const showCards = () => {
+
+    const allCards = document.querySelectorAll('.card')
+
+    allCards.forEach((carde) => {
+        carde.classList.add('reveal-card');
+    })
+
+
+    setTimeout(() => {
+
+        allCards.forEach((carde) => {
+            carde.classList.remove('reveal-card')
+        })
+        
+    }, 600)  
 
 }
 
 window.onload = () => {
 
     spanPlayer.innerHTML = localStorage.getItem('player');
-    startTimer();
     loadGame();
+    showCards();
+    startTimer();
 }
 
