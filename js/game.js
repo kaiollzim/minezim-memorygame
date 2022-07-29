@@ -33,7 +33,7 @@ const checkEndGame = () => {
     if (disabledCards.length === 22) {
         setTimeout(() => {
             clearInterval(this.loop);
-            alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi: ${timer.innerHTML} segundos`);
+            alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de ${timer.innerHTML} segundos`);
         }, 150)
     }
 }
@@ -67,6 +67,10 @@ const checkCards = () => {
 }
 
 const revealCard = ({ target }) => {
+
+    if (!target.parentNode.className.includes('card')) {
+        return;
+    }
     
     if (target.parentNode.className.includes('reveal-card')) {
         return;

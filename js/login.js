@@ -19,5 +19,9 @@ const handleSubmit = (event) => {
     window.location = 'pages/game.html'
 }
 
+function changeDonate() {
+    window.location = 'pages/game.html'
+}
+
 input.addEventListener('input', validadeInput)
 form.addEventListener('submit', handleSubmit)

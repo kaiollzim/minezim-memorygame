@@ -35,6 +35,13 @@
     width: 100%;
 }
 
+hr.rounded {
+    border-top: 3px solid #bbb;
+    border-radius: 5px;
+    width: 50%;
+    margin: 25px;
+}
+
 .login__button {
     padding: 15px;
     background-color: #ee665c;
@@ -50,4 +57,64 @@
     background-color: #eee;
     color: #aaa;
     cursor: default;
+}
+
+.rank__button {
+    padding: 15px;
+    background-color: #2899bb;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    width: 40%;
+    max-width: 300px;
+    transition: 200ms all;
+}
+.rank__button:hover {
+    transform: scale(0.98, 0.98);
+    background-color: #22819e;
+}
+
+.donate__button {
+    padding: 15px;
+    background-color: #0e9c4e;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    width: 40%;
+    max-width: 300px;
+    transition: 200ms all;
+    margin-top: 5px;
+}
+.donate__button:hover {
+    transform: scale(0.98, 0.98);
+    background-color: #0d8040;
+}
+
+.author {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 5rem;
+    text-align: center;
+}
+
+/* --- RESPONSIVITY --- */
+@media screen and (max-width: 767px) {
+
+    .login__header img {
+        width: 70px;
+        margin-bottom: 10px;
+    }
+
+    .login__header h1 {
+        color: #333;
+        font-size: 1em;
+    }
+
+    .author {
+        font-size: 12px;
+    }
+
 }
