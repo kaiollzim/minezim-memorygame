@@ -2,10 +2,20 @@ const grid = document.querySelector('.grid')
 const spanPlayer = document.querySelector('.player')
 const timer = document.querySelector('.timer')
 
+// Win Box
+const winnerPlayer = document.querySelector('.winner')
+const winTime = document.querySelector('.winTimer')
+const winBox = document.querySelector('.win-box')
+const resetBtn = document.querySelector('.reset__button')
+
+// Sounds
+const clickFlip = document.querySelector('#clickFlip')
+const unFlip = document.querySelector('#unFlip')
+const point = document.querySelector('#point')
+
 const chars = [
     'baleko',
     'daniel',
-    'giao',
     'kaiuu',
     'kinjongpimba',
     'nudege',
@@ -14,6 +24,14 @@ const chars = [
     'tropa',
     'ualycry',
     'ualyempada',
+    'john',
+    'homem',
+    'milos',
+    'homer',
+    'seje',
+    'sabor',
+    'tirumine',
+    'macacog',
 ];
 
 const createElement = (tag, className) => {
@@ -30,10 +48,13 @@ const checkEndGame = () => {
 
     const disabledCards = document.querySelectorAll('.disabled-card')
 
-    if (disabledCards.length === 22) {
+    if (disabledCards.length === 36) {
         setTimeout(() => {
             clearInterval(this.loop);
-            alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi de ${timer.innerHTML} segundos`);
+            winnerPlayer.innerHTML = localStorage.getItem('player');
+            winTime.innerHTML = timer.innerHTML;
+
+            winBox.classList.remove('hide')
         }, 150)
     }
 }
@@ -53,6 +74,10 @@ const checkCards = () => {
 
         checkEndGame();
 
+        setTimeout(() => {
+            point.play()
+        }, 350)
+
     } else {
 
         setTimeout(() => {
@@ -61,6 +86,8 @@ const checkCards = () => {
 
             firstCard = ''
             secondCard = ''
+
+            unFlip.play()
         }, 500)
     }
 
@@ -79,9 +106,11 @@ const revealCard = ({ target }) => {
     if (firstCard === '') {
         target.parentNode.classList.add('reveal-card');
         firstCard = target.parentNode;
+        clickFlip.cloneNode(true).play()
     } else if (secondCard === '') {
         target.parentNode.classList.add('reveal-card');
         secondCard = target.parentNode;
+        clickFlip.cloneNode(true).play()
 
         checkCards();
 
@@ -144,7 +173,7 @@ const showCards = () => {
             carde.classList.remove('reveal-card')
         })
         
-    }, 600)  
+    }, 1000)  
 
 }
 
@@ -155,4 +184,8 @@ window.onload = () => {
     showCards();
     startTimer();
 }
+
+resetBtn.addEventListener('click', () => {
+    location.reload();
+})
 

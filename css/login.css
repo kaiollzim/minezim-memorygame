@@ -100,6 +100,21 @@ hr.rounded {
     text-align: center;
 }
 
+.qrcode {
+    width: 150px;
+    bottom: 15rem;
+}
+
+.qr-text {
+    font-size: 14px;
+    margin-top: 25px;
+    color: #333;
+}
+
+.qr-hide{
+    display: none;
+}
+
 /* --- RESPONSIVITY --- */
 @media screen and (max-width: 767px) {
 

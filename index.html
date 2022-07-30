@@ -15,10 +15,16 @@
     <!-- JS LINK -->
     <!-- Utilizamos a tag 'defer' para adiar a leitura do script (Evitando erros de leitura de componentes)-->
     <script defer src="./js/login.js"></script>
+    <script defer src="../js/stylization.js"></script>
 
     <title>Minezim | Login</title>
 </head>
 <body>
+
+    <!-- LAOD AUDIOS -->
+    <audio src="./sounds/keyboard.m4a" id="keyboard"></audio>
+    <audio src="./sounds/mouseclick.m4a" id="mouseClick"></audio>
+
     
     <form class="login-form">
 
@@ -29,9 +35,12 @@
             <input type="text" placeholder="Nick" class="login__input">
             <button type="submit" class="login__button" disabled>Play</button>
             <hr class="rounded">
-            <button type="button" class="rank__button" disabled>Ranking</button>
-            <button type="button" class="donate__button" disabled>Donate</button>
+            <button type="button" class="rank__button">Ranking</button>
+            <button type="button" class="donate__button">Donate</button>
         </div>
+
+        <img src="./images/qrcode.png" class="qrcode qr-hide">
+        <p class="qr-text qr-hide">Send me a pix ;)</p>
 
         <div class="author">
             <p>Made with 💖 by Kain</p>
