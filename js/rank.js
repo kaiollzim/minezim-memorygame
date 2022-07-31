@@ -42,7 +42,7 @@ const createPlayerCard = (pos, textName, record) => {
 
 const loadRank = () => {
 
-    const playerCard = createPlayerCard('1', 'Amigo Nosso', '23');
+    const playerCard = createPlayerCard('1', 'Player', '23');
     rankBox.appendChild(playerCard);
 
 }

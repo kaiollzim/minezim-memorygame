@@ -14,7 +14,7 @@ const typeText = (textDiv) => {
     textDiv.innerHTML = "";
 
     textArray.forEach((letra, i) => {
-        setTimeout(() => (textDiv.innerHTML += letra), 70 * i);
+        setTimeout(() => (textDiv.innerHTML += letra), 65 * i);
     })
 
 }
