@@ -1,0 +1,88 @@
+main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.header img {
+    width: 100px;
+    margin: 15px;
+}
+
+.header h1 {
+    color: #333;
+    font-size: 1.5em;
+}
+
+.header p {
+    color: #333;
+    font-size: 18px;
+}
+
+.return__button {
+    padding: 15px;
+    background-color: #ee665c;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    max-width: 300px;
+}
+
+hr.rounded {
+    border-top: 3px solid #bbb;
+    border-radius: 5px;
+    width: 80%;
+    margin: 25px;
+}
+
+.rank-box {
+    width: 80rem;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+}
+
+.player-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 50rem;
+    color: #333;
+}
+
+.player__position {
+    height: 100%;
+    width: 10%;
+}
+
+.player__name {
+    height: 100%;
+    width: 80%;
+}
+
+.player__time {
+    height: 100%;
+    width: 10%;
+}
+
+.centralize {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

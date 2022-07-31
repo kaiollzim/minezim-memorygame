@@ -8,6 +8,19 @@ const keyboard = document.querySelector('#keyboard');
 
 audioClick.volume = 0.2;
 
+const typeText = (textDiv) => {
+
+    const textArray = textDiv.innerHTML.split("");
+    textDiv.innerHTML = "";
+
+    textArray.forEach((letra, i) => {
+        setTimeout(() => (textDiv.innerHTML += letra), 70 * i);
+    })
+
+}
+
+typeText(document.querySelector('.type__text'))
+
 donate.addEventListener('click', () => {
     audioClick.play();
     qrCode.classList.remove('qr-hide');
@@ -16,4 +29,11 @@ donate.addEventListener('click', () => {
 
 rank.addEventListener('click', () => {
     audioClick.play();
+
+    setTimeout(() => {
+        window.location = 'pages/rank.html'
+    }, 200)
+
+    
 })
+

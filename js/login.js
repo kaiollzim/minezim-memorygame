@@ -3,12 +3,10 @@ const button = document.querySelector('.login__button')
 const form = document.querySelector('.login-form')
 
 const keyboardAudio = document.querySelector('#keyboard');
-keyboardAudio.volume = 0.2;
-
 
 const validadeInput = ({ target }) => {
 
-    keyboardAudio.play();
+    keyboardAudio.cloneNode(true).play();
 
     if (target.value.length > 25) {
         button.setAttribute('disabled', '')
@@ -19,7 +17,6 @@ const validadeInput = ({ target }) => {
         button.removeAttribute('disabled')
         return
     }
-
 
     button.setAttribute('disabled', '')
 }

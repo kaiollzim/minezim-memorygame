@@ -115,6 +115,24 @@ hr.rounded {
     display: none;
 }
 
+
+/* --- ANIMATIONS --- */
+.type__text::after {
+    content: '|';
+    color: gray;
+    animation: blind 300ms infinite ease-out;
+}
+
+@keyframes blind {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
 /* --- RESPONSIVITY --- */
 @media screen and (max-width: 767px) {
 

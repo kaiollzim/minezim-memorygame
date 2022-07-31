@@ -12,6 +12,8 @@ const resetBtn = document.querySelector('.reset__button')
 const clickFlip = document.querySelector('#clickFlip')
 const unFlip = document.querySelector('#unFlip')
 const point = document.querySelector('#point')
+const audioClick = document.querySelector('#mouseClick');
+audioClick.volume = 0.3
 
 const chars = [
     'baleko',
@@ -95,14 +97,17 @@ const checkCards = () => {
 
 const revealCard = ({ target }) => {
 
+    // Fix Grid flip bug
     if (!target.parentNode.className.includes('card')) {
         return;
     }
     
+    // Check if card is already reveal
     if (target.parentNode.className.includes('reveal-card')) {
         return;
     }
 
+    // Logic
     if (firstCard === '') {
         target.parentNode.classList.add('reveal-card');
         firstCard = target.parentNode;
@@ -179,13 +184,18 @@ const showCards = () => {
 
 window.onload = () => {
 
-    spanPlayer.innerHTML = localStorage.getItem('player');
+    spanPlayer.innerText = localStorage.getItem('player');
     loadGame();
     showCards();
     startTimer();
 }
 
 resetBtn.addEventListener('click', () => {
-    location.reload();
+
+    audioClick.play()
+
+    setTimeout(() => {
+        location.reload();
+    }, 200)
 })
 
