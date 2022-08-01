@@ -15,6 +15,7 @@ main {
     align-items: center;
     justify-content: center;
     padding: 20px 20px 50px;
+    zoom: 0.804;
 }
 
 header {
@@ -22,7 +23,7 @@ header {
     align-items: center;
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.8);
-    font-size: 1.2em;
+    font-size: 1em;
     width: 100%;
     max-width: 800px;
     padding: 30px;

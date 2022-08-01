@@ -178,7 +178,7 @@ const showCards = () => {
             carde.classList.remove('reveal-card')
         })
         
-    }, 1000)  
+    }, 1250)  
 
 }
 
